@@ -1,0 +1,106 @@
+/* Fondo general del cuerpo */
+body {
+  background-image: url(/img/fundotodolistactual2.png);
+  background-color: #f0f0f0;
+  background-size: cover;            /* Escala la imagen para cubrir toda la pantalla */
+  background-repeat: no-repeat;      /* No la repite */
+  background-position: center center;/* Centra la imagen */
+  
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* Tarjeta que contiene la aplicación */
+.tarjeta {
+  background-color: white;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 420px;
+}
+
+/* Área de entrada para nueva tarea */
+.entrada {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.entrada input {
+  flex: 1;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.entrada button {
+  padding: 0.5em 1em;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Lista de tareas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Cada tarea principal */
+.tarea {
+  background-color: #fafafa;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Subtareas tipo checklist */
+.subtareas {
+  margin-top: 0.5em;
+}
+
+.subtareas input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+/* Entrada para nueva subtarea */
+.nueva-subtarea {
+  display: flex;
+  margin-top: 0.5em;
+  gap: 0.5em;
+}
+
+/* Botones de editar y eliminar tarea */
+.botones-tarea {
+  display: flex;
+  gap: 0.5em;
+  margin: 0.5em 0;
+}
+
+.botones-tarea button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Botones dentro de cada subtarea */
+.subtareas button {
+  margin-left: 0.5em;
+  background-color: black;
+  color: orange;
+  border: none;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  cursor: pointer;
+}

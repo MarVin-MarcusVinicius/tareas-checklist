@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Tareas con Checklist</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- Conectamos el CSS -->
+</head>
+<body>
+  <div class="tarjeta"> <!-- Caja contenedora principal -->
+    <h2>📝 Mis Tareas</h2>
+
+    <!-- Entrada para nueva tarea -->
+    <div class="entrada">
+      <input type="text" id="tareaInput" placeholder="Escribe una tarea..." />
+      <button onclick="agregarTarea()">Agregar tarea</button>
+    </div>
+
+    <!-- Aquí aparecen las tareas que el usuario crea -->
+    <ul id="listaTareas"></ul>
+  </div>
+
+  <script src="script.js"></script> <!-- Conectamos el JavaScript -->
+</body>
+</html>
