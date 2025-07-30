@@ -17,7 +17,7 @@ body {
 
 /* Tarjeta que contiene la aplicación */
 .tarjeta {
-  background-color: white;
+   background-color: rgba(84, 49, 148, 0.53);
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
