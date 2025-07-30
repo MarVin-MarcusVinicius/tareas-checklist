@@ -1,6 +1,6 @@
 /* Fondo general del cuerpo */
 body {
-  background-image: url(/img/fundotodolistactual2.png);
+  background-image:url("img/fundotodolistactual2.png");
   background-color: #f0f0f0;
   background-size: cover;            /* Escala la imagen para cubrir toda la pantalla */
   background-repeat: no-repeat;      /* No la repite */
