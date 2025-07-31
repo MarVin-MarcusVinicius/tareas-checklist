@@ -165,3 +165,17 @@ document.getElementById("formRegistro").addEventListener("submit", function(e) {
   // Limpiar los campos del formulario
   e.target.reset();
 });
+
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "SEU_DOMINIO.firebaseapp.com",
+  projectId: "NOME_DO_PROJETO",
+  storageBucket: "SEU_BUCKET.appspot.com",
+  messagingSenderId: "SEU_SENDER_ID",
+  appId: "SEU_APP_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+
