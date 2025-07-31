@@ -179,3 +179,16 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
+const provider = new firebase.auth.GoogleAuthProvider();
+auth.signInWithPopup(provider)
+  .then(result => {
+    const user = result.user;
+    console.log("Logado como:", user.displayName);
+  })
+  .catch(error => console.error(error));
+
+db.collection("tasks").add({
+  uid: auth.currentUser.uid,
+  task: "Comprar pão",
+  createdAt: firebase.firestore.FieldValue.serverTimestamp()
+});
