@@ -1,74 +1,69 @@
-let tareas = []; // 🧠 Arreglo principal donde se guardan todas las tareas y sus subtareas
+let tareas = []; // Aquí se guardan todas las tareas y subtareas
 
-// 🔄 Carga las tareas desde el almacenamiento local del navegador al iniciar la app
 function cargarTareas() {
-  const datos = localStorage.getItem('tareasChecklist'); // Busca datos guardados
+  const datos = localStorage.getItem('tareasChecklist');
   if (datos) {
-    tareas = JSON.parse(datos); // Convierte los datos de texto a objeto JavaScript
-    tareas.forEach(crearElementoTarea); // Muestra cada tarea en pantalla
+    tareas = JSON.parse(datos);
+    tareas.forEach(crearElementoTarea);
   }
 }
 
-// 💾 Guarda las tareas actuales en el almacenamiento local del navegador
 function guardarTareas() {
-  localStorage.setItem('tareasChecklist', JSON.stringify(tareas)); // Convierte las tareas en texto
+  localStorage.setItem('tareasChecklist', JSON.stringify(tareas));
 }
 
-// ➕ Agrega una nueva tarea a la lista
 function agregarTarea() {
-  const texto = document.getElementById('tareaInput').value.trim(); // Toma el texto del input
-  if (!texto) return; // Si está vacío, no hace nada
+  const texto = document.getElementById('tareaInput').value.trim();
+  if (!texto) return;
 
   const tarea = {
-    texto, // Texto de la tarea
-    subtareas: [] // Arreglo vacío para subtareas
+    texto,
+    subtareas: []
   };
 
-  tareas.push(tarea); // Añade la nueva tarea al arreglo
-  guardarTareas(); // Guarda los cambios
-  crearElementoTarea(tarea); // Muestra la tarea en pantalla
-  document.getElementById('tareaInput').value = ''; // Limpia el campo de entrada
+  tareas.push(tarea);
+  guardarTareas();
+  crearElementoTarea(tarea);
+  document.getElementById('tareaInput').value = '';
 }
 
-// 📋 Genera y muestra todas las subtareas de una tarea
 function renderizarSubtareas(ulSub, tarea) {
-  ulSub.innerHTML = ''; // Limpia la lista antes de agregar elementos
+  ulSub.innerHTML = '';
   tarea.subtareas.forEach((sub) => {
-    const liSub = document.createElement('li'); // Crea elemento de lista
+    const liSub = document.createElement('li');
 
-    const check = document.createElement('input'); // Casilla de verificación
+    const check = document.createElement('input');
     check.type = 'checkbox';
-    check.checked = sub.completa; // Marca si está completada
+    check.checked = sub.completa;
     check.onchange = () => {
-      sub.completa = check.checked; // Actualiza el estado
-      guardarTareas(); // Guarda los cambios
+      sub.completa = check.checked;
+      guardarTareas();
     };
 
-    const textoSub = document.createElement('span'); // Texto de la subtarea
+    const textoSub = document.createElement('span');
     textoSub.textContent = sub.texto;
 
-    // ✏️ Botón para editar subtarea
+    // ✏️ Editar subtarea
     const btnEditarSub = document.createElement('button');
     btnEditarSub.textContent = 'Editar';
     btnEditarSub.onclick = () => {
       const nuevoTexto = prompt('Editar subtarea:', sub.texto);
       if (nuevoTexto) {
-        sub.texto = nuevoTexto; // Actualiza el texto
+        sub.texto = nuevoTexto;
         guardarTareas();
-        renderizarSubtareas(ulSub, tarea); // Re-renderiza
+        renderizarSubtareas(ulSub, tarea);
       }
     };
 
-    // 🗑️ Botón para eliminar subtarea
+    // 🗑️ Eliminar subtarea
     const btnEliminarSub = document.createElement('button');
     btnEliminarSub.textContent = 'Eliminar';
     btnEliminarSub.onclick = () => {
-      tarea.subtareas = tarea.subtareas.filter(s => s !== sub); // Elimina del arreglo
+      tarea.subtareas = tarea.subtareas.filter(s => s !== sub);
       guardarTareas();
       renderizarSubtareas(ulSub, tarea);
     };
 
-    // Agregamos todos los elementos a la subtarea
     liSub.appendChild(check);
     liSub.appendChild(textoSub);
     liSub.appendChild(btnEditarSub);
@@ -77,15 +72,14 @@ function renderizarSubtareas(ulSub, tarea) {
   });
 }
 
-// 🏷️ Crea el HTML para mostrar una tarea completa (con botones y subtareas)
 function crearElementoTarea(tarea) {
   const li = document.createElement('li');
-  li.className = 'tarea'; // Clase para aplicar estilos CSS
+  li.className = 'tarea';
 
-  const titulo = document.createElement('h3'); // Título de la tarea
+  const titulo = document.createElement('h3');
   titulo.textContent = tarea.texto;
 
-  // ✏️ Botón para editar la tarea
+  // ✏️ Botón editar tarea
   const btnEditar = document.createElement('button');
   btnEditar.textContent = 'Editar';
   btnEditar.onclick = () => {
@@ -97,98 +91,54 @@ function crearElementoTarea(tarea) {
     }
   };
 
-  // 🗑️ Botón para eliminar la tarea
+  // 🗑️ Botón eliminar tarea
   const btnEliminar = document.createElement('button');
   btnEliminar.textContent = 'Eliminar';
   btnEliminar.onclick = () => {
-    tareas = tareas.filter(t => t !== tarea); // Elimina del arreglo
+    tareas = tareas.filter(t => t !== tarea);
     guardarTareas();
-    li.remove(); // Elimina de la vista
+    li.remove();
   };
 
-  // 📦 Contenedor para botones de tarea
   const contBotones = document.createElement('div');
   contBotones.className = 'botones-tarea';
   contBotones.appendChild(btnEditar);
   contBotones.appendChild(btnEliminar);
 
-  // 📋 Lista de subtareas
+  // 🧾 Subtareas
   const ulSub = document.createElement('ul');
   ulSub.className = 'subtareas';
   renderizarSubtareas(ulSub, tarea);
 
-  // ➕ Entrada para añadir nueva subtarea
+  // ➕ Añadir nueva subtarea
   const entradaSub = document.createElement('div');
   entradaSub.className = 'nueva-subtarea';
 
-  const inputSub = document.createElement('input'); // Campo de texto para subtarea
+  const inputSub = document.createElement('input');
   inputSub.type = 'text';
   inputSub.placeholder = 'Añadir subtarea...';
 
-  const botonSub = document.createElement('button'); // Botón para añadir subtarea
+  const botonSub = document.createElement('button');
   botonSub.textContent = 'Agregar';
   botonSub.onclick = () => {
     const texto = inputSub.value.trim();
     if (!texto) return;
-    const nuevaSub = { texto, completa: false }; // Crea nueva subtarea
-    tarea.subtareas.push(nuevaSub); // Añade al arreglo
+    const nuevaSub = { texto, completa: false };
+    tarea.subtareas.push(nuevaSub);
     guardarTareas();
     renderizarSubtareas(ulSub, tarea);
-    inputSub.value = ''; // Limpia el campo
+    inputSub.value = '';
   };
 
   entradaSub.appendChild(inputSub);
   entradaSub.appendChild(botonSub);
 
-  // 🧱 Estructuramos todo el elemento tarea
   li.appendChild(titulo);
   li.appendChild(contBotones);
   li.appendChild(ulSub);
   li.appendChild(entradaSub);
 
-  document.getElementById('listaTareas').appendChild(li); // Lo agregamos a la lista principal
+  document.getElementById('listaTareas').appendChild(li);
 }
 
-cargarTareas(); // 🚀 Ejecutamos la carga de datos al iniciar la aplicación
-``
-
-document.getElementById("formRegistro").addEventListener("submit", function(e) {
-  e.preventDefault();
-  
-  const nombre = document.getElementById("nombreUsuario").value;
-  const email = document.getElementById("emailUsuario").value;
-  const clave = document.getElementById("claveUsuario").value;
-
-  // Solo para mostrar por ahora; puedes guardarlo en localStorage más adelante si quieres
-  alert(`¡Usuario registrado!\nNombre: ${nombre}\nCorreo: ${email}`);
-  
-  // Limpiar los campos del formulario
-  e.target.reset();
-});
-
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_DOMINIO.firebaseapp.com",
-  projectId: "NOME_DO_PROJETO",
-  storageBucket: "SEU_BUCKET.appspot.com",
-  messagingSenderId: "SEU_SENDER_ID",
-  appId: "SEU_APP_ID"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
-
-const provider = new firebase.auth.GoogleAuthProvider();
-auth.signInWithPopup(provider)
-  .then(result => {
-    const user = result.user;
-    console.log("Logado como:", user.displayName);
-  })
-  .catch(error => console.error(error));
-
-db.collection("tasks").add({
-  uid: auth.currentUser.uid,
-  task: "Comprar pão",
-  createdAt: firebase.firestore.FieldValue.serverTimestamp()
-});
+cargarTareas(); // 🔄 Ejecutamos esto cuando se abre la app
