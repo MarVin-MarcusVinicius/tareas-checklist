@@ -1,39 +1,29 @@
-<!DOCTYPE html> <!-- Indica que estamos usando HTML5 -->
-<html lang="es"> <!-- Define el idioma principal como español -->
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Lista de Tareas con Registro</title>
-  <link rel="stylesheet" href="styles.css" /> <!-- Conecta el archivo CSS -->
+  <title>Lista de Tareas con Checklist</title>
+
+  <!-- Vinculamos el archivo de estilos CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div id="appContainer">
 
-    <!-- 👤 Registro de usuario -->
-    <h1>📝 Mi Gestor de Tareas</h1>
-    <form id="formRegistro" class="formulario-registro">
-      <input type="text" id="nombreUsuario" placeholder="Nombre" required>
-      <input type="email" id="emailUsuario" placeholder="Correo electrónico" required>
-      <input type="password" id="claveUsuario" placeholder="Contraseña" required>
-      <button type="submit">Registrar</button>
-    </form>
+  <!-- Tarjeta principal que muestra la app -->
+  <div class="tarjeta">
+    <h2>📝 Mis Tareas</h2>
 
-    <!-- ✅ Campo para añadir nuevas tareas -->
+    <!-- Entrada para escribir nueva tarea -->
     <div class="entrada">
-      <input type="text" id="tareaInput" placeholder="Escribe una tarea...">
+      <input type="text" id="tareaInput" placeholder="Escribe una tarea..." />
       <button onclick="agregarTarea()">Agregar tarea</button>
     </div>
 
-    <!-- 📋 Lista donde se mostrarán las tareas -->
+    <!-- Aquí se insertarán automáticamente las tareas -->
     <ul id="listaTareas"></ul>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-
   </div>
 
-  <!-- 📦 Código JavaScript -->
+  <!-- Conectamos con el archivo JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
