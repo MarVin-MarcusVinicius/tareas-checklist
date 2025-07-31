@@ -1,3 +1,4 @@
+/* 🧱 Configuração base da página */
 /* Fondo general del cuerpo */
 body {
   background-image:url("img/fundotodolistactual2.png");
@@ -14,103 +15,115 @@ body {
   margin: 0;
 }
 
-
-/* Tarjeta que contiene la aplicación */
-.tarjeta {
-  background-color: rgba(84, 49, 148, 0.327);
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 420px;
+/* 🧭 Container principal da aplicação */
+#appContainer {
+  max-width: 600px;              /* Largura máxima para manter tudo compacto */
+  margin: auto;                  /* Centraliza horizontalmente */
+  background-color: white;       /* Fundo branco para contraste */
+  padding: 20px;
+  border-radius: 10px;           /* Bordas arredondadas bonitas */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Leve sombra para destaque */
 }
 
-/* Área de entrada para nueva tarea */
-.entrada {
-  display: flex;
-  gap: 0.5em;
-  margin-bottom: 1em;
+/* 🔠 Título principal */
+h1 {
+  text-align: center;            /* Centraliza o título */
+  color: #333;                   /* Cor escura */
+  margin-bottom: 20px;
 }
 
-.entrada input {
-  flex: 1;
-  padding: 0.5em;
-  border-radius: 6px;
+/* 📝 Campos de entrada (input e textarea) */
+input {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;        /* Garante que padding não estique o input */
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.entrada button {
-  padding: 0.5em 1em;
-  background-color: #0078d7;
+/* 🚀 Botões padrão */
+button {
+  padding: 10px;
+  margin-top: 5px;
+  width: 100%;
+  background-color: #3b82f6;     /* Azul vibrante */
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* Lista de tareas */
-ul {
-  list-style: none;
-  padding: 0;
+/* 🖱️ Efeito hover para botões */
+button:hover {
+  background-color: #2563eb;     /* Azul mais escuro ao passar o mouse */
 }
 
-/* Cada tarea principal */
+/* 🧾 Formulário de registro */
+.formulario-registro {
+  margin-bottom: 30px;
+}
+
+/* 🧠 Cada tarefa visualmente destacada */
 .tarea {
-  background-color: #fafafa;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  background-color: #e2e8f0;     /* Cinza claro */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-/* Subtareas tipo checklist */
-.subtareas {
-  margin-top: 0.5em;
+/* 🔤 Título de tarefa */
+.tarea h3 {
+  margin: 0 0 10px 0;
+  color: #1f2937;
 }
 
-.subtareas input[type="checkbox"] {
-  margin-right: 0.5em;
-}
-
-/* Entrada para nueva subtarea */
-.nueva-subtarea {
-  display: flex;
-  margin-top: 0.5em;
-  gap: 0.5em;
-}
-
-/* Botones de editar y eliminar tarea */
+/* 🧷 Botões de tarefa agrupados */
 .botones-tarea {
   display: flex;
-  gap: 0.5em;
-  margin: 0.5em 0;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.botones-tarea button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-  cursor: pointer;
+/* 📋 Lista de subtarefas com recuo */
+.subtareas {
+  list-style-type: none;
+  padding-left: 20px;
 }
 
-/* Botones dentro de cada subtarea */
+/* 🔹 Cada subtarefa */
+.subtareas li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* 🔲 Checkbox das subtarefas */
+.subtareas input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* ✏️ Botões de subtarefa */
 .subtareas button {
-  margin-left: 0.5em;
-  background-color: black;
-  color: orange;
-  border: none;
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
 }
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
+
+/* ➕ Seção de adicionar nova subtarefa */
+.nueva-subtarea {
+  margin-top: 10px;
+}
+
+/* 🧠 Caixa de texto para nova subtarefa */
+.nueva-subtarea input {
+  width: 70%;
+  display: inline-block;
+}
+
+/* 🧠 Botão para adicionar subtarefa */
+.nueva-subtarea button {
+  width: 28%;
+  display: inline-block;
 }
