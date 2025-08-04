@@ -1,18 +1,23 @@
 /* Fondo general del cuerpo */
+/* Fondo general del cuerpo */
 body {
-  background-image: url("img/fundotodolistactual2.png");
-  background-color: #f0f0f0;
-  background-size: cover;            /* Escala la imagen para cubrir toda la pantalla */
-  background-repeat: no-repeat;      /* No la repite */
-  background-position: center center;/* Centra la imagen */
-  
+  background-image: url("img/fundotodolistactual2.png"); /* Fondo personalizado */
+  background-color: #f0f0f0; /* Color de fondo por defecto */
+  background-size: cover; /* Escalar imagen a toda la pantalla */
+  background-repeat: no-repeat; /* No repetir imagen */
+  background-position: center center; /* Centrar imagen */
+
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  min-height: 100vh; /* Altura mínima para pantallas pequeñas */
   margin: 0;
+  padding: 1em; /* Añadido: mejora visual en pantallas pequeñas */
+  box-sizing: border-box; /* Añadido: evita desbordamientos */
 }
+
 
 
 /* Tarjeta que contiene la aplicación */
@@ -21,8 +26,11 @@ body {
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 420px;
+
+  width: 100%;            /* Ahora usa todo el ancho disponible */
+  max-width: 420px;       /* Pero no excede de 420px en pantallas grandes */
 }
+
 
 /* Área de entrada para nueva tarea */
 .entrada {
