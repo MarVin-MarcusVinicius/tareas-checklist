@@ -1,11 +1,11 @@
-/* Fondo general del cuerpo */
-/* Fondo general del cuerpo */
+/* 🌄 Fondo y configuración general del body */
 body {
-  background-image: url("img/fundotodolistactual2.png"); /* Fondo personalizado */
-  background-color: #f0f0f0; /* Color de fondo por defecto */
-  background-size: cover; /* Escalar imagen a toda la pantalla */
-  background-repeat: no-repeat; /* No repetir imagen */
-  background-position: center center; /* Centrar imagen */
+  background-image: url("img/fundotodolistactual2.png"); /* Imagen de fondo */
+  background-color: #f0f0f0; /* Color de respaldo si la imagen no carga */
+  background-size: cover; /* Escala la imagen para cubrir toda la pantalla */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-position: center center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
 
   font-family: 'Segoe UI', sans-serif;
   display: flex;
@@ -14,25 +14,22 @@ body {
 
   min-height: 100vh; /* Altura mínima para pantallas pequeñas */
   margin: 0;
-  padding: 1em; /* Añadido: mejora visual en pantallas pequeñas */
-  box-sizing: border-box; /* Añadido: evita desbordamientos */
+  padding: 1em;
+  box-sizing: border-box;
 }
 
-
-
-/* Tarjeta que contiene la aplicación */
+/* 🧾 Tarjeta principal de la app */
 .tarjeta {
-  background-color: rgba(84, 49, 148, 0.327);
-  padding: 2em;
+  background-color: rgba(84, 49, 148, 0.327); /* Color con transparencia */
+  padding: 1em;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 10px 0 20px rgba(72, 69, 76, 0.785);
 
-  width: 100%;            /* Ahora usa todo el ancho disponible */
-  max-width: 420px;       /* Pero no excede de 420px en pantallas grandes */
+  width: 100%;
+  max-width: 420px; /* No excede este ancho en pantallas grandes */
 }
 
-
-/* Área de entrada para nueva tarea */
+/* ✏️ Área de entrada para nueva tarea */
 .entrada {
   display: flex;
   gap: 0.5em;
@@ -55,22 +52,22 @@ body {
   cursor: pointer;
 }
 
-/* Lista de tareas */
+/* 📋 Lista de tareas */
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-/* Cada tarea principal */
 .tarea {
   background-color: #fafafa;
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid #7a8087;
 }
 
-/* Subtareas tipo checklist */
+/* ✅ Subtareas tipo checklist */
 .subtareas {
   margin-top: 0.5em;
 }
@@ -86,7 +83,23 @@ ul {
   gap: 0.5em;
 }
 
-/* Botones de editar y eliminar tarea */
+.nueva-subtarea input {
+  flex: 1;
+  padding: 0.4em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.nueva-subtarea button {
+  padding: 0.4em 0.8em;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🛠️ Botones de editar y eliminar tarea */
 .botones-tarea {
   display: flex;
   gap: 0.5em;
@@ -106,20 +119,52 @@ ul {
 .subtareas button {
   margin-left: 0.5em;
   background-color: black;
-  color: orange;
+  color: rgb(255, 221, 0);
   border: none;
   padding: 0.2em 0.6em;
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* 📺 Footer fijo en la parte inferior */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background-color: rgba(50, 10, 123, 0.543);
   color: white;
   text-align: center;
-  padding: 0;
+  padding: 0.5em;
+  font-size: 0.9em;
 }
 
+/* 📱 Responsividad para móviles */
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 0.5em;
+    max-width: 100%;
+  }
+
+  .entrada button,
+  .botones-tarea button,
+  .nueva-subtarea button {
+    font-size: 0.9em;
+    padding: 0.4em;
+  }
+}
+
+/* 🖥️ Ajustes para pantallas grandes como TV */
+@media (min-width: 1200px) {
+  .tarjeta {
+    max-width: 600px;
+    font-size: 1.2em;
+  }
+
+  .entrada input,
+  .entrada button,
+  .nueva-subtarea input,
+  .nueva-subtarea button {
+    font-size: 1.1em;
+  }
+}
