@@ -1,7 +1,7 @@
 /* 🌄 Fondo y configuración general del body */
 body {
   background-image: url("img/euenanda.png"); /* Imagen de fondo (puedes poner una URL aquí) */
-  background-color: #84b96ed7; /* Color de respaldo si la imagen no carga */
+  background-color: #6eb992d7; /* Color de respaldo si la imagen no carga */
   background-size: cover; /* La imagen se escala para cubrir toda la pantalla */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center center; /* Centra la imagen horizontal y verticalmente */
@@ -21,13 +21,16 @@ body {
 /* 🧾 Tarjeta principal de la app */
 .tarjeta {
   background-color: rgba(84, 49, 148, 0.327); /* Fondo con transparencia */
-  padding: 1em; /* Espacio interno para que el contenido no esté pegado al borde */
-  border-radius: 12px; /* Bordes redondeados para diseño más suave */
-  box-shadow: 10px 0 20px rgba(72, 69, 76, 0.785); /* Sombra para dar profundidad */
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 10px 0 20px rgba(72, 69, 76, 0.785);
 
-  width: 100%; /* Ocupa todo el ancho disponible */
-  max-width: 420px; /* No se hace más grande que 420px en pantallas grandes */
+  width: 100%;
+  max-width: 420px;
+  margin-top: 2em; /* Esto sube la tarjeta alejándola del borde superior */
 }
+
+
 
 /* ✏️ Área de entrada para nueva tarea */
 .entrada {
@@ -168,4 +171,3 @@ footer {
     font-size: 1.1em; /* Fuente más grande para mejor visibilidad */
   }
 }
-
