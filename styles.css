@@ -1,170 +1,170 @@
 /* 🌄 Fondo y configuración general del body */
 body {
-  background-image: url("img/fundotodolistactual2.png"); /* Imagen de fondo */
-  background-color: #f0f0f0; /* Color de respaldo si la imagen no carga */
-  background-size: cover; /* Escala la imagen para cubrir toda la pantalla */
-  background-repeat: no-repeat; /* No repite la imagen */
-  background-position: center center; /* Centra la imagen */
-  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+  background-image: url("img/euenanda.png"); /* Imagen de fondo (puedes poner una URL aquí) */
+  background-color: #84b96ed7; /* Color de respaldo si la imagen no carga */
+  background-size: cover; /* La imagen se escala para cubrir toda la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center center; /* Centra la imagen horizontal y verticalmente */
+  background-attachment: fixed; /* La imagen se queda fija al hacer scroll */
 
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Segoe UI', sans-serif; /* Fuente moderna y legible */
+  display: flex; /* Usamos Flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 
-  min-height: 100vh; /* Altura mínima para pantallas pequeñas */
-  margin: 0;
-  padding: 1em;
-  box-sizing: border-box;
+  min-height: 100vh; /* Altura mínima igual al alto de la pantalla */
+  margin: 0; /* Elimina el margen por defecto del navegador */
+  padding: 1em; /* Espacio interno alrededor del contenido */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño */
 }
 
 /* 🧾 Tarjeta principal de la app */
 .tarjeta {
-  background-color: rgba(84, 49, 148, 0.327); /* Color con transparencia */
-  padding: 1em;
-  border-radius: 12px;
-  box-shadow: 10px 0 20px rgba(72, 69, 76, 0.785);
+  background-color: rgba(84, 49, 148, 0.327); /* Fondo con transparencia */
+  padding: 1em; /* Espacio interno para que el contenido no esté pegado al borde */
+  border-radius: 12px; /* Bordes redondeados para diseño más suave */
+  box-shadow: 10px 0 20px rgba(72, 69, 76, 0.785); /* Sombra para dar profundidad */
 
-  width: 100%;
-  max-width: 420px; /* No excede este ancho en pantallas grandes */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 420px; /* No se hace más grande que 420px en pantallas grandes */
 }
 
 /* ✏️ Área de entrada para nueva tarea */
 .entrada {
-  display: flex;
-  gap: 0.5em;
-  margin-bottom: 1em;
+  display: flex; /* Flexbox para alinear input y botón en una fila */
+  gap: 0.5em; /* Espacio entre los elementos */
+  margin-bottom: 1em; /* Espacio debajo para separar de la lista */
 }
 
 .entrada input {
-  flex: 1;
-  padding: 0.5em;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  flex: 1; /* El input ocupa todo el espacio disponible */
+  padding: 0.5em; /* Espacio interno para comodidad al escribir */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde gris claro */
 }
 
 .entrada button {
-  padding: 0.5em 1em;
-  background-color: #0078d7;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 0.5em 1em; /* Espacio interno horizontal y vertical */
+  background-color: #0078d7; /* Color azul para destacar el botón */
+  color: white; /* Texto blanco para contraste */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
 /* 📋 Lista de tareas */
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Sin espacio interno */
+  margin: 0; /* Sin espacio externo */
 }
 
 .tarea {
-  background-color: #fafafa;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 6px;
-  border: 1px solid #7a8087;
+  background-color: #fafafa; /* Fondo blanco suave */
+  padding: 1em; /* Espacio interno */
+  margin-bottom: 1em; /* Espacio entre tareas */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid #7a8087; /* Borde gris oscuro */
 }
 
 /* ✅ Subtareas tipo checklist */
 .subtareas {
-  margin-top: 0.5em;
+  margin-top: 0.5em; /* Espacio arriba para separar de la tarea */
 }
 
 .subtareas input[type="checkbox"] {
-  margin-right: 0.5em;
+  margin-right: 0.5em; /* Espacio entre el checkbox y el texto */
 }
 
 /* Entrada para nueva subtarea */
 .nueva-subtarea {
-  display: flex;
-  margin-top: 0.5em;
-  gap: 0.5em;
+  display: flex; /* Flexbox para alinear input y botón */
+  margin-top: 0.5em; /* Espacio arriba para separar de subtareas existentes */
+  gap: 0.5em; /* Espacio entre input y botón */
 }
 
 .nueva-subtarea input {
-  flex: 1;
-  padding: 0.4em;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  flex: 1; /* Input ocupa todo el espacio disponible */
+  padding: 0.4em; /* Espacio interno */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde gris claro */
 }
 
 .nueva-subtarea button {
-  padding: 0.4em 0.8em;
-  background-color: #0078d7;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 0.4em 0.8em; /* Espacio interno */
+  background-color: #0078d7; /* Color azul */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
 }
 
 /* 🛠️ Botones de editar y eliminar tarea */
 .botones-tarea {
-  display: flex;
-  gap: 0.5em;
-  margin: 0.5em 0;
+  display: flex; /* Flexbox para alinear los botones */
+  gap: 0.5em; /* Espacio entre botones */
+  margin: 0.5em 0; /* Espacio arriba y abajo */
 }
 
 .botones-tarea button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-  cursor: pointer;
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 0.4em 0.8em; /* Espacio interno */
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
 }
 
 /* Botones dentro de cada subtarea */
 .subtareas button {
-  margin-left: 0.5em;
-  background-color: black;
-  color: rgb(255, 221, 0);
-  border: none;
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  cursor: pointer;
+  margin-left: 0.5em; /* Espacio a la izquierda del botón */
+  background-color: black; /* Fondo negro */
+  color: rgb(255, 221, 0); /* Texto amarillo */
+  border: none; /* Sin borde */
+  padding: 0.2em 0.6em; /* Espacio interno más pequeño */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
 }
 
 /* 📺 Footer fijo en la parte inferior */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(50, 10, 123, 0.543);
-  color: white;
-  text-align: center;
-  padding: 0.5em;
-  font-size: 0.9em;
+  position: fixed; /* Se queda fijo en la pantalla */
+  bottom: 0; /* Pegado al borde inferior */
+  left: 0; /* Pegado al borde izquierdo */
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: rgba(50, 10, 123, 0.543); /* Fondo con transparencia */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centra el texto */
+  padding: 0.5em; /* Espacio interno */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
 }
 
 /* 📱 Responsividad para móviles */
 @media (max-width: 480px) {
   .tarjeta {
-    padding: 0.5em;
-    max-width: 100%;
+    padding: 0.5em; /* Menos espacio interno en pantallas pequeñas */
+    max-width: 100%; /* Ocupa todo el ancho disponible */
   }
 
   .entrada button,
   .botones-tarea button,
   .nueva-subtarea button {
-    font-size: 0.9em;
-    padding: 0.4em;
+    font-size: 0.9em; /* Fuente más pequeña para móviles */
+    padding: 0.4em; /* Menos espacio interno */
   }
 }
 
 /* 🖥️ Ajustes para pantallas grandes como TV */
 @media (min-width: 1200px) {
   .tarjeta {
-    max-width: 600px;
-    font-size: 1.2em;
+    max-width: 600px; /* Más ancho en pantallas grandes */
+    font-size: 1.2em; /* Fuente más grande */
   }
 
   .entrada input,
   .entrada button,
   .nueva-subtarea input,
   .nueva-subtarea button {
-    font-size: 1.1em;
+    font-size: 1.1em; /* Fuente más grande para mejor visibilidad */
   }
 }
